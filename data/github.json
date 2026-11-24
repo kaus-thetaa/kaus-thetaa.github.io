@@ -1,0 +1,300 @@
+{
+  "updated": "2026-11-24T03:31:29.982Z",
+  "publicRepoCount": 18,
+  "repos": [
+    {
+      "name": "kaus-thetaa",
+      "description": null,
+      "language": "Python",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-11-23T14:45:15Z",
+      "url": "https://github.com/kaus-thetaa/kaus-thetaa",
+      "archived": false,
+      "latestCommit": {
+        "message": "chore: refresh LeetCode isometric graphs",
+        "date": "2026-11-23T14:45:13Z",
+        "url": "https://github.com/kaus-thetaa/kaus-thetaa/commit/1c7982d0aa16a92d2700121d1cb09ea72f7b8ae2",
+        "repo": "kaus-thetaa"
+      }
+    },
+    {
+      "name": "nightly-tracker",
+      "description": null,
+      "language": "HTML",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-11-22T08:20:41Z",
+      "url": "https://github.com/kaus-thetaa/nightly-tracker",
+      "archived": false,
+      "latestCommit": {
+        "message": "update: add pop up timer, hover to show in ui",
+        "date": "2026-11-22T08:20:32Z",
+        "url": "https://github.com/kaus-thetaa/nightly-tracker/commit/536939873ddb3eaaf85be31565d8f8e081d05dc8",
+        "repo": "nightly-tracker"
+      }
+    },
+    {
+      "name": "zanskar",
+      "description": "main site backend",
+      "language": "HTML",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-11-15T06:14:24Z",
+      "url": "https://github.com/kaus-thetaa/zanskar",
+      "archived": false,
+      "latestCommit": {
+        "message": "refactor: rebuild the entire structure and format",
+        "date": "2026-11-15T06:14:21Z",
+        "url": "https://github.com/kaus-thetaa/zanskar/commit/54f365c055adf190f09b3055818d7395fb9d269f",
+        "repo": "zanskar"
+      }
+    },
+    {
+      "name": "veilrelay",
+      "description": "Self-hosted OpenAI-compatible privacy proxy for detecting and redacting sensitive data in LLM prompts.",
+      "language": "Python",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-11-07T05:27:53Z",
+      "url": "https://github.com/kaus-thetaa/veilrelay",
+      "archived": false,
+      "latestCommit": {
+        "message": "docs: add final build report and per-commit test log",
+        "date": "2026-11-06T13:12:22Z",
+        "url": "https://github.com/kaus-thetaa/veilrelay/commit/bd0d2300ae0e2aea90a3488b98a3c7b3a4668fdf",
+        "repo": "veilrelay"
+      }
+    },
+    {
+      "name": "orbit-gesture-studio",
+      "description": "Webcam hand-gesture control for your desktop: customizable gesture-to-action mappings with a safety-first design (MediaPipe, OpenCV, PySide6)",
+      "language": "Python",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-11-07T02:35:25Z",
+      "url": "https://github.com/kaus-thetaa/orbit-gesture-studio",
+      "archived": false,
+      "latestCommit": {
+        "message": "Add polished README and Gesture Studio demo",
+        "date": "2026-11-07T02:35:16Z",
+        "url": "https://github.com/kaus-thetaa/orbit-gesture-studio/commit/4c2d746250d9e4f57386c355adeae0dbd7c46014",
+        "repo": "orbit-gesture-studio"
+      }
+    },
+    {
+      "name": "digicam",
+      "description": null,
+      "language": "C++",
+      "topics": [],
+      "stars": 1,
+      "pushed_at": "2026-10-30T02:35:54Z",
+      "url": "https://github.com/kaus-thetaa/digicam",
+      "archived": false,
+      "latestCommit": {
+        "message": "Rename outdoor.jpg to daylight.jpg",
+        "date": "2026-10-30T02:35:54Z",
+        "url": "https://github.com/kaus-thetaa/digicam/commit/066f5bd619a229a243b9a64a6577ffbc913c57e6",
+        "repo": "digicam"
+      }
+    },
+    {
+      "name": "tmit-plotter-2026-27",
+      "description": null,
+      "language": "TypeScript",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-09-16T11:10:11Z",
+      "url": "https://github.com/kaus-thetaa/tmit-plotter-2026-27",
+      "archived": false,
+      "latestCommit": {
+        "message": "feat: made the frontend live",
+        "date": "2026-09-16T11:09:59Z",
+        "url": "https://github.com/kaus-thetaa/tmit-plotter-2026-27/commit/282b3694e3da17552faf1abb4d4affc3df75a819",
+        "repo": "tmit-plotter-2026-27"
+      }
+    },
+    {
+      "name": "aeromind",
+      "description": "some pretty cool stuff is gonna be cooking",
+      "language": "Python",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-08-27T18:21:04Z",
+      "url": "https://github.com/kaus-thetaa/aeromind",
+      "archived": false,
+      "latestCommit": {
+        "message": "fix: correct stall speed estimate, add aerodynamics module",
+        "date": "2026-08-27T18:20:56Z",
+        "url": "https://github.com/kaus-thetaa/aeromind/commit/c51115a1f10a54c2455e1e2b798202550d96a13f",
+        "repo": "aeromind"
+      }
+    },
+    {
+      "name": "raceline-ai",
+      "description": null,
+      "language": "Python",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-08-23T19:11:11Z",
+      "url": "https://github.com/kaus-thetaa/raceline-ai",
+      "archived": false,
+      "latestCommit": {
+        "message": "fix: lap detection was being erased by anti exploit clipping, add resume support",
+        "date": "2026-08-23T19:09:09Z",
+        "url": "https://github.com/kaus-thetaa/raceline-ai/commit/1913d529d5cbb84c9178b69749f4860e0ff4b7bf",
+        "repo": "raceline-ai"
+      }
+    },
+    {
+      "name": "thrustmit-recruitment",
+      "description": null,
+      "language": "JavaScript",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-08-22T12:16:05Z",
+      "url": "https://github.com/kaus-thetaa/thrustmit-recruitment",
+      "archived": false,
+      "latestCommit": {
+        "message": "Final fairness and written-round audit",
+        "date": "2026-08-22T12:15:56Z",
+        "url": "https://github.com/kaus-thetaa/thrustmit-recruitment/commit/3e52436c47e516c6494c3433a3f29cc2a0692bbf",
+        "repo": "thrustmit-recruitment"
+      }
+    },
+    {
+      "name": "-aiesec-mahe-audit",
+      "description": null,
+      "language": "JavaScript",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-08-22T08:57:55Z",
+      "url": "https://github.com/kaus-thetaa/-aiesec-mahe-audit",
+      "archived": true,
+      "latestCommit": {
+        "message": "Add Supabase keys",
+        "date": "2026-08-22T08:57:50Z",
+        "url": "https://github.com/kaus-thetaa/-aiesec-mahe-audit/commit/a60c500e3d4fbf73dd59424b60238e4f1daef450",
+        "repo": "-aiesec-mahe-audit"
+      }
+    },
+    {
+      "name": "rl-airbrakes",
+      "description": null,
+      "language": "Python",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-08-02T05:04:39Z",
+      "url": "https://github.com/kaus-thetaa/rl-airbrakes",
+      "archived": false,
+      "latestCommit": {
+        "message": "feat: three-way comparison across clean, wind, and sensor noise conditions",
+        "date": "2026-08-01T23:34:33Z",
+        "url": "https://github.com/kaus-thetaa/rl-airbrakes/commit/2515eace9a4a873b6204877f0008eba17aa4800f",
+        "repo": "rl-airbrakes"
+      }
+    },
+    {
+      "name": "motor-test",
+      "description": null,
+      "language": "Python",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-07-28T10:18:16Z",
+      "url": "https://github.com/kaus-thetaa/motor-test",
+      "archived": false,
+      "latestCommit": {
+        "message": "feat: add serial monitor",
+        "date": "2026-07-28T10:18:12Z",
+        "url": "https://github.com/kaus-thetaa/motor-test/commit/57d71b40d3f54303e44a00c3c4e15bd32d71978b",
+        "repo": "motor-test"
+      }
+    },
+    {
+      "name": "stockbin",
+      "description": null,
+      "language": "HTML",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-07-26T06:02:30Z",
+      "url": "https://github.com/kaus-thetaa/stockbin",
+      "archived": false,
+      "latestCommit": {
+        "message": "refactor: Update live demo link in README.md",
+        "date": "2026-07-26T06:02:30Z",
+        "url": "https://github.com/kaus-thetaa/stockbin/commit/091ec5f852440f7098a8206976698382022d6a57",
+        "repo": "stockbin"
+      }
+    },
+    {
+      "name": "thrustmit-inventory",
+      "description": null,
+      "language": "HTML",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-07-25T12:29:13Z",
+      "url": "https://github.com/kaus-thetaa/thrustmit-inventory",
+      "archived": false,
+      "latestCommit": {
+        "message": "Add initial index.html for Avionics Inventory",
+        "date": "2026-07-25T12:29:12Z",
+        "url": "https://github.com/kaus-thetaa/thrustmit-inventory/commit/51fc394d1a0ec38727dfa5ad26c32bacc076656c",
+        "repo": "thrustmit-inventory"
+      }
+    },
+    {
+      "name": "ai-os",
+      "description": "Offline AI layer over the Windows file system natural language search, summarization, and organization powered by a local LLM.",
+      "language": "Python",
+      "topics": [],
+      "stars": 1,
+      "pushed_at": "2026-07-14T06:25:17Z",
+      "url": "https://github.com/kaus-thetaa/ai-os",
+      "archived": false,
+      "latestCommit": {
+        "message": "docs: rewrite readme with full feature list, architecture, and demo gif",
+        "date": "2026-07-14T06:25:11Z",
+        "url": "https://github.com/kaus-thetaa/ai-os/commit/e12dada4527ecf8978335984d05b0b5831c7d52b",
+        "repo": "ai-os"
+      }
+    },
+    {
+      "name": "EdgeGaze",
+      "description": "Real-Time Facial Emotion Detection on ESP32-CAM · TinyML + FreeRTOS + Live Web Dashboard",
+      "language": "C",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-04-23T05:53:51Z",
+      "url": "https://github.com/kaus-thetaa/EdgeGaze",
+      "archived": false,
+      "latestCommit": {
+        "message": "update",
+        "date": "2026-04-19T01:20:54Z",
+        "url": "https://github.com/kaus-thetaa/EdgeGaze/commit/f8462f5aa2138a4c7addec2af8c96763c138a952",
+        "repo": "EdgeGaze"
+      }
+    },
+    {
+      "name": "IMU_Auto_HAL",
+      "description": "A bare-metal, object-oriented C++ Hardware Abstraction Layer (HAL) for auto-detecting and reading I2C IMUs (MPU6050 & ICM) on Arduino.",
+      "language": "C++",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-02-22T13:29:38Z",
+      "url": "https://github.com/kaus-thetaa/IMU_Auto_HAL",
+      "archived": false,
+      "latestCommit": {
+        "message": "Update README.md",
+        "date": "2026-02-22T13:29:37Z",
+        "url": "https://github.com/kaus-thetaa/IMU_Auto_HAL/commit/9945c1063d7fa846af63ec98319b69403e1fc277",
+        "repo": "IMU_Auto_HAL"
+      }
+    }
+  ],
+  "latestCommit": {
+    "message": "update: add pop up timer, hover to show in ui",
+    "date": "2026-11-22T08:20:32Z",
+    "url": "https://github.com/kaus-thetaa/nightly-tracker/commit/536939873ddb3eaaf85be31565d8f8e081d05dc8",
+    "repo": "nightly-tracker"
+  }
+}

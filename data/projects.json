@@ -1,0 +1,170 @@
+{
+  "projects": [
+    {
+      "slug": "ai-os",
+      "title": "AI-OS",
+      "subtitle": "Your files. Your machine. Your AI.",
+      "category": [
+        "ML",
+        "Software"
+      ],
+      "repo": "ai-os",
+      "status": "shipping",
+      "problem": "Finding a file should not mean remembering what you named it.",
+      "built": "An offline Windows assistant that searches, summarizes and organizes files using a local language model and semantic search.",
+      "result": "Local inference. Review-before-apply file actions. Recoverable deletion.",
+      "stack": [
+        "Python",
+        "Ollama",
+        "PyQt6",
+        "ChromaDB"
+      ],
+      "detail": "Phi-3 Mini handles language tasks while sentence-transformers and ChromaDB make documents searchable by meaning. The interface separates the proposed action from its execution, and duplicate removal uses the recycle bin.",
+      "limit": "Requires a Windows machine and local model installation. Performance depends on available hardware.",
+      "diagram": [
+        "Your documents",
+        "Local embeddings",
+        "Semantic search",
+        "Local response"
+      ],
+      "media": "ai-os",
+      "source": "README.md",
+      "repoUrl": "https://github.com/kaus-thetaa/ai-os",
+      "sourceUrl": "https://github.com/kaus-thetaa/ai-os/blob/main/README.md",
+      "confirmed": true
+    },
+    {
+      "slug": "orbit-gesture-studio",
+      "title": "ORBIT Gesture Studio",
+      "subtitle": "A webcam. A gesture. Your desktop.",
+      "category": [
+        "ML",
+        "Software"
+      ],
+      "repo": "orbit-gesture-studio",
+      "status": "building",
+      "problem": "Turn a hand gesture into a useful desktop action, with control over when it runs.",
+      "built": "A gesture studio with live recognition, configurable mappings and a disarmed-by-default action system.",
+      "result": "Explicit action allowlist. Emergency stop. Local camera processing.",
+      "stack": [
+        "Python",
+        "MediaPipe",
+        "OpenCV",
+        "PySide6"
+      ],
+      "detail": "Static hand poses map to approved desktop actions. The studio lets you tune thresholds and test mappings before arming the system. Camera frames stay in memory.",
+      "limit": "Motion gestures are experimental. The repository demo uses simulated landmarks, and synthetic tests do not establish real-world recognition accuracy.",
+      "diagram": [
+        "Webcam frame",
+        "Hand landmarks",
+        "Gesture mapping",
+        "Approved action"
+      ],
+      "media": "orbit",
+      "source": "README.md",
+      "repoUrl": "https://github.com/kaus-thetaa/orbit-gesture-studio",
+      "sourceUrl": "https://github.com/kaus-thetaa/orbit-gesture-studio/blob/main/README.md",
+      "confirmed": true
+    },
+    {
+      "slug": "raceline-ai",
+      "title": "RaceLine-AI",
+      "subtitle": "Learning the racing line.",
+      "category": [
+        "ML",
+        "Software"
+      ],
+      "repo": "raceline-ai",
+      "status": "building",
+      "problem": "Can an agent learn to drive a circuit from feedback instead of a scripted racing line?",
+      "built": "A custom racing environment, PPO training pipeline and browser dashboard for inspecting laps, crashes and replay data.",
+      "result": "From simulation to training to a shareable, data-driven dashboard.",
+      "stack": [
+        "Python",
+        "PyGame",
+        "Stable-Baselines3",
+        "FastAPI"
+      ],
+      "detail": "The environment models drag, grip and rolling resistance. Observations describe speed, alignment and track position; rewards combine forward progress, crashes and completed laps.",
+      "limit": "A simulated learning environment, not a real vehicle controller. No lap-time improvement claim is made without a sourced training run.",
+      "diagram": [
+        "Track state",
+        "PPO policy",
+        "Steer + throttle",
+        "Reward feedback"
+      ],
+      "media": "race",
+      "source": "README.md",
+      "repoUrl": "https://github.com/kaus-thetaa/raceline-ai",
+      "sourceUrl": "https://github.com/kaus-thetaa/raceline-ai/blob/main/README.md",
+      "confirmed": true
+    },
+    {
+      "slug": "veilrelay",
+      "title": "VeilRelay",
+      "subtitle": "A privacy layer for AI prompts.",
+      "category": [
+        "Software",
+        "ML"
+      ],
+      "repo": "veilrelay",
+      "status": "building",
+      "problem": "Sensitive text can leave your application inside an otherwise ordinary AI prompt.",
+      "built": "A self-hosted OpenAI-compatible proxy that replaces detected sensitive values with reversible typed placeholders.",
+      "result": "Request-scoped mapping, streamed response support and value-free audit logs.",
+      "stack": [
+        "Python",
+        "FastAPI",
+        "Docker",
+        "pytest"
+      ],
+      "detail": "Pattern detectors and validators inspect supported text before forwarding it. Known placeholders are restored in normal and streamed responses. The project includes a threat model and reproducible benchmark artifacts.",
+      "limit": "Alpha software. Detection is incomplete and does not guarantee privacy or compliance. Current benchmark results are a small synthetic smoke test, not production accuracy.",
+      "diagram": [
+        "Application",
+        "Detect + redact",
+        "Upstream model",
+        "Restore response"
+      ],
+      "media": "veil",
+      "source": "README.md",
+      "repoUrl": "https://github.com/kaus-thetaa/veilrelay",
+      "sourceUrl": "https://github.com/kaus-thetaa/veilrelay/blob/main/README.md",
+      "confirmed": true
+    },
+    {
+      "slug": "ground-station",
+      "title": "Static Fire Ground Station",
+      "subtitle": "From serial data to a clear decision.",
+      "category": [
+        "Embedded",
+        "Flight"
+      ],
+      "repo": "motor-test",
+      "status": "shipping",
+      "problem": "Static-fire testing needs readable telemetry and explicit operator controls.",
+      "built": "A PyQt6 ground station with serial input, live plots, interlocked states, simulation mode and CSV logging.",
+      "result": "A browser simulation lets you explore the interface without hardware.",
+      "stack": [
+        "Python",
+        "PyQt6",
+        "Serial",
+        "Arduino"
+      ],
+      "detail": "The desktop app starts in simulation mode. Its state machine separates safe, armed, burn and complete states, while session data is written to CSV. A browser demo makes the workflow inspectable.",
+      "limit": "The browser experience is a simulation. It is not an independently certified safety system.",
+      "diagram": [
+        "Sensor stream",
+        "Serial reader",
+        "State machine",
+        "Plots + CSV"
+      ],
+      "media": "flight",
+      "demo": "https://kaus-thetaa.github.io/motor-test/",
+      "source": "README.md",
+      "repoUrl": "https://github.com/kaus-thetaa/motor-test",
+      "sourceUrl": "https://github.com/kaus-thetaa/motor-test/blob/main/README.md",
+      "confirmed": true
+    }
+  ]
+}

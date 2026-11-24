@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kaus-thetaa.github.io/sitemap.xml
