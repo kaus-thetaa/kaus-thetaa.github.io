@@ -27,3 +27,9 @@ export async function sendMessage(endpoint, data) {
   if (!response.ok) throw new Error('Message could not be sent. Please try email instead.');
   const result = await response.json(); if (!result.ok) throw new Error(result.error || 'Message could not be sent. Please try email instead.'); return result;
 }
+
+export async function loadMotionLibraries() {
+  for (const file of ['gsap.min.js','ScrollTrigger.min.js','lenis.min.js']) {
+    await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=new URL('assets/vendor/'+file,ROOT);script.onload=resolve;script.onerror=reject;document.head.append(script);});
+  }
+}

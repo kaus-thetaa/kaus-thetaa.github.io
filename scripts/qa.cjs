@@ -2,7 +2,7 @@ const {chromium}=require('playwright');
 const {default:AxeBuilder}=require('@axe-core/playwright');
 const assert=require('node:assert/strict');
 (async()=>{
- const browser=await chromium.launch({headless:true,executablePath:'/opt/google/chrome/chrome',args:['--no-sandbox']});
+ const browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH || (require('node:fs').existsSync('/opt/google/chrome/chrome')?'/opt/google/chrome/chrome':undefined),args:['--no-sandbox']});
  const context=await browser.newContext({viewport:{width:1440,height:1000}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
  await page.goto('http://localhost:8000/',{waitUntil:'networkidle'});await page.screenshot({path:'artifacts/desktop.png',fullPage:true});
  const audit=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();console.log('Axe violations',JSON.stringify(audit.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))));

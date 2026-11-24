@@ -1,4 +1,4 @@
-import {getJSON, getNow, safeURL, sendMessage} from './api.js';
+import {getJSON, getNow, safeURL, sendMessage, loadMotionLibraries} from './api.js';
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const arrow = '<svg class="external" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8"/></svg>';
@@ -44,7 +44,7 @@ function motion(){
   if(window.Lenis){lenis=new window.Lenis({duration:.85,smoothWheel:true,syncTouch:false,anchors:true,autoRaf:true});}
   if(window.gsap && window.ScrollTrigger && document.querySelector('.hud')){gsap.registerPlugin(ScrollTrigger);ScrollTrigger.getAll().forEach(t=>t.kill());gsap.fromTo('.hud-art',{opacity:.8},{opacity:1,scrollTrigger:{trigger:'.hud',start:'top 85%',end:'bottom 30%',scrub:true}});}
 }
-function initMotion(){motion();let played=true;try{played=sessionStorage.getItem('intro-played')==='yes';sessionStorage.setItem('intro-played','yes');}catch{}
+function initMotion(){if(!reduced.matches) setTimeout(()=>loadMotionLibraries().then(motion).catch(()=>{}),1800);let played=true;try{played=sessionStorage.getItem('intro-played')==='yes';sessionStorage.setItem('intro-played','yes');}catch{}
   if(!played && !reduced.matches && document.querySelector('.hud')){
     const skip=document.querySelector('.skip-intro');skip.hidden=false;const animations=[document.querySelector('.hud-art').animate([{opacity:.2},{opacity:1}],{duration:1600,easing:'cubic-bezier(.22,1,.36,1)'}),document.querySelector('.hud-reticle').animate([{transform:'scale(.96)',opacity:.1,transformOrigin:'center'},{transform:'scale(1)',opacity:1,transformOrigin:'center'}],{duration:1600,easing:'cubic-bezier(.22,1,.36,1)'})];skip.onclick=()=>{animations.forEach(a=>a.finish());skip.hidden=true;};Promise.all(animations.map(a=>a.finished)).then(()=>skip.hidden=true);
   }

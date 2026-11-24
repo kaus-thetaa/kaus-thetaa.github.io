@@ -16,7 +16,7 @@ Tokens: panel #0B0D0E; graphite #15181A; steel #2B3034; text #DAD8CE; muted #9B9
 - Hand-authored SVG for external-link marks, HUD and conceptual project diagrams. No icon library, stock imagery or generated raster art. Diagrams are not screenshots or empirical plots.
 - No Three.js: the HUD is a lightweight SVG and needs no WebGL context.
 - Zero runtime build: HTML, CSS and ES modules. `scripts/render.py` regenerates pages from the curated JSON and its HTML templates. Generated HTML is committed and served from main/root.
-- GSAP 3.13.0, ScrollTrigger 3.13.0 and Lenis 1.3.11 are vendored. Intro is 1.6 seconds once per session, skippable and disabled for reduced motion. Filter movement uses FLIP; switching uses a short opacity transition. Lenis leaves touch native. No continuous decorative animation.
+- GSAP 3.13.0, ScrollTrigger 3.13.0 and Lenis 1.3.11 are vendored. Motion libraries load after the initial render, avoiding competition with fonts on mobile. Intro is 1.6 seconds once per session, skippable and disabled for reduced motion. Filter movement uses FLIP; switching uses a short opacity transition. Lenis leaves touch native. No continuous decorative animation.
 - Native same-origin View Transitions with browser fallback; no navigation interception, modifier-click changes or link delays.
 - JPG social images use original typography and palette for reliable social previews. Runtime visuals use SVG. One title/description/image per project URL.
 - Lowercase kebab-case URLs and files. Shared `css/tokens.css` can be reused by Zanskar without changing its content.
