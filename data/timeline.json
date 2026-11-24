@@ -1,0 +1,81 @@
+{
+  "source": "Owner-provided experience screenshot and direct confirmation, 24 November 2026",
+  "confirmed": true,
+  "groups": [
+    {
+      "year": "2026",
+      "entries": [
+        {
+          "start": "2026-02",
+          "end": null,
+          "dateLabel": "February 2026 \u2014 Present",
+          "organization": "thrustMIT",
+          "role": "Junior Engineer",
+          "type": "Embedded & flight systems",
+          "description": "I help build rockets in my free time. At thrustMIT, I work on flight electronics, embedded systems and control pipelines for high-power rocketry.",
+          "confirmed": true,
+          "emphasis": "featured",
+          "url": "https://www.thrustmit.in/",
+          "photo": "thrustmit-rocket",
+          "photoAlt": "Holding the thrustMIT Vyom rocket at a campus display",
+          "photoCaption": "With Vyom, at a thrustMIT display."
+        },
+        {
+          "start": "2026-02",
+          "end": null,
+          "dateLabel": "February 2026 \u2014 Present",
+          "organization": "AIESEC in M.A.H.E.",
+          "role": "LCVP Marketing",
+          "type": "Leadership & marketing",
+          "description": "Leading marketing alongside my engineering work.",
+          "confirmed": true,
+          "emphasis": "secondary"
+        }
+      ]
+    },
+    {
+      "year": "2025",
+      "entries": [
+        {
+          "start": "2025-08",
+          "end": "2026-02",
+          "dateLabel": "August 2025 \u2014 February 2026",
+          "organization": "AIESEC in M.A.H.E.",
+          "role": "Team Leader \u2014 Consideration, OGV",
+          "type": "Leadership",
+          "description": "Led a team in the consideration stage of the Outgoing Global Volunteers funnel, supporting communication and participant touchpoints.",
+          "confirmed": true,
+          "photo": "aiesec-team",
+          "photoAlt": "AIESEC team members together in a classroom",
+          "photoCaption": "The people behind the work."
+        },
+        {
+          "start": "2025",
+          "end": "2029",
+          "dateLabel": "2025 \u2014 2029 \u00b7 In progress",
+          "organization": "MIT Manipal",
+          "role": "B.Tech, Computer Science & Engineering",
+          "type": "Education",
+          "description": "Studying computer science while building across AI, software and embedded systems.",
+          "confirmed": true
+        }
+      ]
+    },
+    {
+      "year": "2022",
+      "entries": [
+        {
+          "start": "2022",
+          "end": "2024",
+          "dateLabel": "2022 \u2014 2024",
+          "organization": "National Cadet Corps",
+          "role": "Senior Under Officer (SUO)",
+          "type": "Leadership & service",
+          "description": "A chapter before engineering: two years in NCC, serving as Senior Under Officer (SUO).",
+          "confirmed": true,
+          "emphasis": "featured"
+        }
+      ]
+    }
+  ]
+}

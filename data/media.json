@@ -1,0 +1,33 @@
+{
+  "publicationStatus": "Owner authorized selected photographs for publication on 24 November 2026.",
+  "images": [
+    {
+      "file": "assets/photos/portrait.webp",
+      "source": "Owner supplied photograph, 24 November 2026",
+      "temporary": false,
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "file": "assets/photos/aiesec-team.webp",
+      "source": "Owner supplied photograph, 24 November 2026",
+      "temporary": false,
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "file": "assets/photos/thrustmit-rocket.webp",
+      "source": "Owner supplied photograph, 24 November 2026",
+      "temporary": false,
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "file": "assets/photos/thrustmit-team.webp",
+      "source": "Owner supplied photograph, 24 November 2026",
+      "temporary": false,
+      "width": 1600,
+      "height": 1200
+    }
+  ]
+}

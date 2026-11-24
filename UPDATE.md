@@ -8,7 +8,7 @@ When the owner says "update my site", inspect public GitHub repositories first. 
 4. What public link should readers use?
 5. Is there a screenshot or diagram to add?
 
-Edit `data/projects.json` for curated project copy. Set `confirmed` only after verifying the owner's statement or public repository evidence. Do not publish `[verify]` text or private repository names. Run `python3 scripts/render.py` after curated changes; check the HTML diff because homepage editorial copy is in the renderer's template. For Now updates use the owner's Now tab once configured, otherwise `data/now.json`.
+Edit `data/projects.json` for curated project copy. Set `confirmed` only after verifying the owner's statement or public repository evidence. Do not publish `[verify]` text or private repository names. Run `python3 scripts/render.py` after curated changes; check the HTML diff because homepage editorial copy is in templates/home.html. For Now updates use the owner's Now tab once configured, otherwise `data/now.json`.
 
 Run `node scripts/sync-github.mjs` to refresh public repository metadata. Do not copy credentials into files. `GITHUB_TOKEN` is optional locally and supplied by Actions.
 
@@ -27,3 +27,6 @@ Show the actual diff, verify links, mobile layout, keyboard navigation, reduced 
 ## Local preview
 
 Run `python3 -m http.server 8000` from the repository root. Open http://localhost:8000 . Deployment uses GitHub Pages from `main`, root. No package installation or bundler is needed to serve the site.
+
+## Timeline updates
+Edit data/timeline.json using confirmed month/year dates. Preserve overlapping roles. Use null for a current role only when confirmed. Run python3 scripts/render.py to regenerate the timeline and project pages.

@@ -46,3 +46,28 @@ As checked on 24 November 2026, consumer Apps Script quotas include 6 minutes pe
 
 ## Remaining owner inputs
 Resume, optional photo, actual project screenshots, EdgeGaze identity, LinkedIn pasted text/export, current Instagram figures and selected post links, exact AIESEC term and role confirmation, research/publication evidence. None blocks the initial public portfolio. No LinkedIn or Instagram scraping was performed.
+
+## Second iteration: direction from the owner, 24 November 2026
+The owner asked for a stronger 2xA-inspired visual direction, real imagery and a continuous personal timeline. Direct visual comparison showed that 2xA gives motion imagery most of the opening viewport, shifts image scale across the scroll and uses much less panel framing. The first version overemphasized the decorative HUD and left too little space for evidence of actual work.
+
+The next composition will use oversized neutral typography, large real project media, asymmetrical editorial layouts, restrained instrument details and a continuous chronological journey. Remain dark throughout. Use the reference's visual hierarchy and pacing, not its assets, dot typeface, copy or exact layout. Portrait and actual work photos should ground the site in Kaustubh's experience. Do not create synthetic documentary images of the owner or projects.
+
+The owner supplied a screenshot confirming AIESEC and thrustMIT roles and dates. `data/timeline.json` preserves overlapping roles, uses stated start/end months, omits the screenshot's relative durations, and does not infer a January term end. The local timeline renders semantic ordered lists with sticky years on desktop, normal flow on mobile and a static usable reduced-motion/no-JavaScript version.
+
+Real image acquisition is pending: automatic approval review failed on the network download request because the workspace spend cap was reached. The action did not run. No alternate mechanism was used to bypass the review. Local changes remain unpublished until the image-led redesign can be completed and verified.
+
+
+## Second-iteration preview implemented
+The owner explicitly asked to proceed before photos arrive. The preview now replaces the old MFD with an asymmetric editorial project gallery, increases typographic scale, and replaces the cockpit hero with an original toroidal wireframe study. It follows 2xA's principles of image scale, negative space and composition changes, not its exact layout or distinctive dotted lettering. Geist is now the single primary family; the previous condensed industrial face remains in the assets but is not requested. This is an intentional change to the initial two-family direction in response to the owner's redesign request.
+
+Five distinct CSS/SVG concept studies keep the work visually differentiated while real images are pending. Each is explicitly labelled. The hero canvas is drawn only for resize, scroll or pointer input, pauses offscreen, caps device-pixel ratio at 2 and stays static for reduced motion. No perpetual animation loop or Three.js dependency is used. Lenis loads after the first render; GSAP is no longer requested because native animations are sufficient here.
+
+The timeline has six owner-confirmed entries, year jump links, a desktop sticky year rail, a mobile sticky compact year control and a scroll-progress line. No project launch dates were inferred from repository update timestamps. Content is fully present in static HTML without JavaScript. The home template lives in templates/home.html; scripts/render.py handles shared navigation, project pages and timeline generation.
+
+## Interactive preview refinement, 24 November 2026
+
+The hero now uses a projected neural network, connecting the visual language to ML. Pointer input rotates it with damping; a keyboard-accessible button sends a finite pulse through its layers. Offscreen rendering stops and reduced motion keeps a static equivalent. No Three.js dependency is needed. The visible code excerpt comes from this site's actual animation module.
+
+Two locally hosted WebP stock photographs replace concept visuals for AI-OS and the ground station in this local preview. Credits and source/license links are recorded in data/media.json. Captions identify them as temporary stock, not the owner's project photos. The owner requested replacement before publication; do not deploy this iteration until those assets are replaced.
+
+The timeline foregrounds thrustMIT Junior Engineer and keeps LCVP Marketing smaller and secondary. Associate and recruitment entries were removed at the owner's request. NCC Senior Cadet Officer, 2022–2024, was directly confirmed by the owner. thrustMIT links to https://www.thrustmit.in/. Copy says 'I help build rockets in my free time.' No Mach 2 claim: the documented Mach 1.8 flight refers to AgniAstra in 2024, before the owner's tenure (https://blog.mygov.in/editorial/celebrating-indias-young-innovators-who-outshined-at-spaceport-america-cup-2024/).
