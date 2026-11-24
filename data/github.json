@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T03:36:44.307Z",
+  "updated": "2026-11-24T16:44:47.239Z",
   "publicRepoCount": 19,
   "repos": [
     {
@@ -8,10 +8,15 @@
       "language": "HTML",
       "topics": [],
       "stars": 0,
-      "pushed_at": "2026-11-24T03:36:32Z",
+      "pushed_at": "2026-11-24T16:44:30Z",
       "url": "https://github.com/kaus-thetaa/kaus-thetaa.github.io",
       "archived": false,
-      "latestCommit": null
+      "latestCommit": {
+        "message": "feat: add photos",
+        "date": "2026-11-24T16:44:15Z",
+        "url": "https://github.com/kaus-thetaa/kaus-thetaa.github.io/commit/cc86edb9e349b5fa1b67c1ffc360d5b9d48bf201",
+        "repo": "kaus-thetaa.github.io"
+      }
     },
     {
       "name": "kaus-thetaa",
@@ -19,14 +24,30 @@
       "language": "Python",
       "topics": [],
       "stars": 0,
-      "pushed_at": "2026-11-23T14:45:15Z",
+      "pushed_at": "2026-11-24T14:55:18Z",
       "url": "https://github.com/kaus-thetaa/kaus-thetaa",
       "archived": false,
       "latestCommit": {
         "message": "chore: refresh LeetCode isometric graphs",
-        "date": "2026-11-23T14:45:13Z",
-        "url": "https://github.com/kaus-thetaa/kaus-thetaa/commit/1c7982d0aa16a92d2700121d1cb09ea72f7b8ae2",
+        "date": "2026-11-24T14:55:17Z",
+        "url": "https://github.com/kaus-thetaa/kaus-thetaa/commit/118da4e5e3f1dd5d0b0239fb712f1645fb51e847",
         "repo": "kaus-thetaa"
+      }
+    },
+    {
+      "name": "zanskar",
+      "description": "main site backend",
+      "language": "HTML",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-11-24T10:59:25Z",
+      "url": "https://github.com/kaus-thetaa/zanskar",
+      "archived": false,
+      "latestCommit": {
+        "message": "feat: title fix",
+        "date": "2026-07-09T14:30:29Z",
+        "url": "https://github.com/kaus-thetaa/zanskar/commit/5277d64b2f1e4b73fbfefe7ed756a1184e3518b5",
+        "repo": "zanskar"
       }
     },
     {
@@ -43,22 +64,6 @@
         "date": "2026-11-22T08:20:32Z",
         "url": "https://github.com/kaus-thetaa/nightly-tracker/commit/536939873ddb3eaaf85be31565d8f8e081d05dc8",
         "repo": "nightly-tracker"
-      }
-    },
-    {
-      "name": "zanskar",
-      "description": "main site backend",
-      "language": "HTML",
-      "topics": [],
-      "stars": 0,
-      "pushed_at": "2026-11-15T06:14:24Z",
-      "url": "https://github.com/kaus-thetaa/zanskar",
-      "archived": false,
-      "latestCommit": {
-        "message": "refactor: rebuild the entire structure and format",
-        "date": "2026-11-15T06:14:21Z",
-        "url": "https://github.com/kaus-thetaa/zanskar/commit/54f365c055adf190f09b3055818d7395fb9d269f",
-        "repo": "zanskar"
       }
     },
     {
