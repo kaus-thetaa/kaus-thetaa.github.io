@@ -1,7 +1,18 @@
 {
-  "updated": "2026-11-24T03:31:29.982Z",
-  "publicRepoCount": 18,
+  "updated": "2026-11-24T03:34:19.424Z",
+  "publicRepoCount": 19,
   "repos": [
+    {
+      "name": "kaus-thetaa.github.io",
+      "description": "Kaustubh Chaturvedi: ML, software and embedded systems portfolio",
+      "language": "HTML",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-11-24T03:34:03Z",
+      "url": "https://github.com/kaus-thetaa/kaus-thetaa.github.io",
+      "archived": false,
+      "latestCommit": null
+    },
     {
       "name": "kaus-thetaa",
       "description": null,
