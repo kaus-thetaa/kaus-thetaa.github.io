@@ -21,13 +21,13 @@ def link(url, label, cls=''):
 
 def head(title, description, path='/', image='og.jpg'):
     return f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101110"><title>{ESC(title)}</title><meta name="description" content="{ESC(description)}"><link rel="canonical" href="https://kaus-thetaa.github.io{path}"><meta property="og:title" content="{ESC(title)}"><meta property="og:description" content="{ESC(description)}"><meta property="og:type" content="website"><meta property="og:url" content="https://kaus-thetaa.github.io{path}"><meta property="og:image" content="https://kaus-thetaa.github.io/assets/{image}"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/body.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/style.css"></head><body><a class="skip-link" href="#main">Skip to content</a>'''
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101110"><title>{ESC(title)}</title><meta name="description" content="{ESC(description)}"><link rel="canonical" href="https://kaus-thetaa.github.io{path}"><meta property="og:title" content="{ESC(title)}"><meta property="og:description" content="{ESC(description)}"><meta property="og:type" content="website"><meta property="og:url" content="https://kaus-thetaa.github.io{path}"><meta property="og:image" content="https://kaus-thetaa.github.io/assets/{image}"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/body.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/style.css?v=20261125-5"></head><body><a class="skip-link" href="#main">Skip to content</a>'''
 
 def nav():
     return f'''<header class="site-header shell"><a class="brand" href="/" aria-label="KC — Kaustubh Chaturvedi home">K<span>C</span><span class="brand-dot">.</span></a><span class="header-location">Independent mind.<br>Manipal, India <span id="local-time"></span></span><nav aria-label="Main navigation"><a href="/#work">Work</a><a href="/#journey">Journey</a><a href="/#about">About</a><a href="/#contact">Let’s talk {ARROW}</a></nav></header>'''
 
 def footer():
-    return f'''<footer class="site-footer shell"><div><span>Kaustubh Chaturvedi</span><span>Made with curiosity & code.</span></div><div>{link(profile['zanskar'],'Zanskar')}{link(profile['github'],'GitHub')}<a href="#main">Back to top {ARROW}</a></div></footer><script type="module" src="/js/app.js"></script></body></html>'''
+    return f'''<footer class="site-footer shell"><div><span>Kaustubh Chaturvedi</span><span>Made with curiosity & code.</span></div><div>{link(profile['zanskar'],'Zanskar')}{link(profile['github'],'GitHub')}<a href="#main">Back to top {ARROW}</a></div></footer><script type="module" src="/js/app.js?v=20261125"></script></body></html>'''
 
 def artwork(p):
     slug=p['slug']
@@ -59,7 +59,12 @@ def timeline_markup():
             e={k:ESC(str(v)) for k,v in entry.items()}
             ongoing=entry['end'] is None
             photo=''
-            if entry.get('photo'):
+            if entry.get('gallery'):
+                slides=[]
+                for index,item in enumerate(entry['gallery']):
+                    slides.append(f'''<figure class="journey-slide{' is-active' if index == 0 else ''}" data-slide="{index}" aria-hidden="{'false' if index == 0 else 'true'}"><div class="journey-slide-frame"><img src="/assets/photos/{ESC(item['photo'])}.webp" alt="{ESC(item['alt'])}" width="{int(item['width'])}" height="{int(item['height'])}" loading="lazy" decoding="async"></div><figcaption>{ESC(item['caption'])}</figcaption></figure>''')
+                photo=f'''<div class="journey-gallery" data-gallery aria-label="thrustMIT engineering photographs"><div class="journey-slides">{''.join(slides)}</div><div class="gallery-controls"><span class="gallery-count" aria-live="polite">01 / {len(slides):02d}</span><div><button type="button" data-gallery-prev aria-label="Previous photograph">←</button><button type="button" data-gallery-next aria-label="Next photograph">→</button></div></div></div>'''
+            elif entry.get('photo'):
                 photo=f'<figure class="journey-photo"><img src="/assets/photos/{e["photo"]}.webp" alt="{e["photoAlt"]}" width="1600" height="{1200 if entry["photo"]=="thrustmit-rocket" else 900}" loading="lazy" decoding="async"><figcaption>{e["photoCaption"]}</figcaption></figure>'
             org=link(entry['url'],entry['organization']) if entry.get('url') else e['organization']
             entries.append(f'''<li class="journey-entry {e.get('emphasis','')}"><div class="journey-date"><time datetime="{e['start']}">{e['dateLabel']}</time>{'<span class="ongoing">Current role</span>' if ongoing else ''}</div><p class="journey-org">{org}</p><h4>{e['role']}</h4><p class="journey-description">{e['description']}</p><span class="journey-category">{e['type']}</span>{photo}</li>''')
@@ -77,7 +82,7 @@ def syntax_field():
             cls='comment' if token.startswith('//') else 'string' if token.startswith(("'",'"')) else 'keyword' if token in ['const','let','function','return','if','for','of','true','false'] else 'number' if re.fullmatch(r'\d+(?:\.\d+)?',token) else 'plain'
             result.append(f'<span class="syntax-{cls}">{ESC(token)}</span>')
         return ''.join(result)
-    return ''.join('<div class="syntax-column">'+''.join('<div class="syntax-line">'+highlight(line)+'</div>' for line in lines[offset:]+lines[:offset])+'</div>' for offset in [0,8,16,24])
+    return ''.join('<div class="syntax-column">'+''.join(f'<div class="syntax-line" style="--line:{index}">'+highlight(line)+'</div>' for index,line in enumerate(lines[offset:]+lines[:offset]))+'</div>' for offset in [0,8,16,24])
 
 context={
  'syntax_field':syntax_field(),

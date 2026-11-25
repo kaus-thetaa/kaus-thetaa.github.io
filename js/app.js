@@ -3,6 +3,26 @@ import {startSculpture} from './sculpture.js';
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const sculpture=document.querySelector('#sculpture');if(sculpture)startSculpture(sculpture,reduced);
 
+const revealTargets=[...document.querySelectorAll('.about-portrait, .intro-section > div, .section-heading > h2, .section-heading > p, .work-intro, .work-item, .code-section > div, .syntax-top, .syntax-stage > h2, .journey-entry, .beyond-section h2, .team-photo, .beyond-links > a, .now-section > *, .contact-top, .contact-section h2, .contact-bottom')];
+if(revealTargets.length&&!reduced.matches&&'IntersectionObserver' in window){
+  document.documentElement.classList.add('has-scroll-reveals');
+  const revealObserverTargets=new Map();
+  let projectOrder=0;
+  revealTargets.forEach(target=>{
+    target.classList.add('scroll-reveal');
+    if(target.matches('.section-heading > h2, .syntax-stage > h2, .beyond-section h2, .contact-section h2'))target.classList.add('scroll-headline');
+    if(target.matches('.work-item'))target.style.setProperty('--reveal-delay',`${projectOrder++*80}ms`);
+    const observerTarget=target.classList.contains('scroll-headline')?target.parentElement:target;
+    const targets=revealObserverTargets.get(observerTarget)||[];
+    targets.push(target);
+    revealObserverTargets.set(observerTarget,targets);
+  });
+  const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){revealObserverTargets.get(entry.target).forEach(target=>target.classList.add('is-revealed'));revealObserver.unobserve(entry.target);}
+  }),{threshold:0,rootMargin:'0px 0px -5% 0px'});
+  revealObserverTargets.forEach((targets,target)=>revealObserver.observe(target));
+}
+
 const workItems=[...document.querySelectorAll('.work-item')];
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
   const positions=new Map(workItems.map(item=>[item,item.getBoundingClientRect()]));
@@ -47,6 +67,10 @@ if(formMount && profile.contactEndpoint && safeURL(profile.contactEndpoint)){
 
 const syntaxSection=document.querySelector('.syntax-section');
 if(syntaxSection){
+  if(!reduced.matches&&'IntersectionObserver' in window){
+    const focusObserver=new IntersectionObserver(([entry])=>syntaxSection.classList.toggle('is-in-view',entry.isIntersecting),{threshold:.18});
+    focusObserver.observe(syntaxSection);
+  }
   const stage=syntaxSection.querySelector('.syntax-stage'),toggle=syntaxSection.querySelector('#syntax-toggle');
   let syntaxFrame=0,nextX=0,nextY=0;
   toggle.addEventListener('click',()=>{const active=toggle.getAttribute('aria-pressed')!=='true';toggle.setAttribute('aria-pressed',String(active));syntaxSection.classList.toggle('is-exploring',active);toggle.firstChild.textContent=active?'Back to the thought ':'Explore the code ';});
@@ -54,3 +78,15 @@ if(syntaxSection){
   stage.addEventListener('pointermove',event=>{if(reduced.matches||event.pointerType==='touch')return;const bounds=stage.getBoundingClientRect();nextX=(event.clientX-bounds.left-bounds.width/2)*.025;nextY=(event.clientY-bounds.top-bounds.height/2)*.04;if(!syntaxFrame)syntaxFrame=requestAnimationFrame(paintSyntax);});
   stage.addEventListener('pointerleave',()=>{nextX=nextY=0;if(!syntaxFrame)syntaxFrame=requestAnimationFrame(paintSyntax);});
 }
+
+document.querySelectorAll('[data-gallery]').forEach(gallery=>{
+  const slides=[...gallery.querySelectorAll('.journey-slide')],count=gallery.querySelector('.gallery-count');
+  let current=0;
+  const show=index=>{
+    current=(index+slides.length)%slides.length;
+    slides.forEach((slide,i)=>{const active=i===current;slide.classList.toggle('is-active',active);slide.setAttribute('aria-hidden',String(!active));});
+    count.textContent=`${String(current+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
+  };
+  gallery.querySelector('[data-gallery-prev]').addEventListener('click',()=>show(current-1));
+  gallery.querySelector('[data-gallery-next]').addEventListener('click',()=>show(current+1));
+});
