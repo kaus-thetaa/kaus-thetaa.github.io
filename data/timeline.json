@@ -16,9 +16,29 @@
           "confirmed": true,
           "emphasis": "featured",
           "url": "https://www.thrustmit.in/",
-          "photo": "thrustmit-rocket",
-          "photoAlt": "Holding the thrustMIT Vyom rocket at a campus display",
-          "photoCaption": "With Vyom, at a thrustMIT display."
+          "gallery": [
+            {
+              "photo": "thrustmit-rocket",
+              "alt": "Holding the thrustMIT Vyom rocket at a campus display",
+              "caption": "With Vyom, at a thrustMIT display.",
+              "width": 1600,
+              "height": 1200
+            },
+            {
+              "photo": "coding-workspace",
+              "alt": "Coding workspace with a laptop, keyboard and engineering notes",
+              "caption": "The software side of the build.",
+              "width": 1600,
+              "height": 2134
+            },
+            {
+              "photo": "hardware-lab",
+              "alt": "Embedded systems workbench with code, breadboards and development boards",
+              "caption": "Code meets hardware at the workbench.",
+              "width": 1600,
+              "height": 2134
+            }
+          ]
         },
         {
           "start": "2026-02",
@@ -29,7 +49,10 @@
           "type": "Leadership & marketing",
           "description": "Leading marketing alongside my engineering work.",
           "confirmed": true,
-          "emphasis": "secondary"
+          "emphasis": "secondary",
+          "photo": "aiesec-team",
+          "photoAlt": "AIESEC team members together in a classroom",
+          "photoCaption": "The people behind the work."
         }
       ]
     },
@@ -44,10 +67,7 @@
           "role": "Team Leader \u2014 Consideration, OGV",
           "type": "Leadership",
           "description": "Led a team in the consideration stage of the Outgoing Global Volunteers funnel, supporting communication and participant touchpoints.",
-          "confirmed": true,
-          "photo": "aiesec-team",
-          "photoAlt": "AIESEC team members together in a classroom",
-          "photoCaption": "The people behind the work."
+          "confirmed": true
         },
         {
           "start": "2025",
