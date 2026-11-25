@@ -44,7 +44,8 @@ export function startSculpture(canvas, reduced) {
   function move(e){if(reduced.matches||e.pointerType==='touch')return;const r=stage.getBoundingClientRect();targetX=((e.clientX-r.left)/r.width-.5)*2;targetY=((e.clientY-r.top)/r.height-.5)*2;schedule();}
   function leave(){targetX=0;targetY=0;schedule();}
   function preference(){x=y=targetX=targetY=0;pulseStart=-Infinity;schedule();}
+  const pulseTimer=window.setInterval(()=>{if(visible&&!document.hidden&&!reduced.matches)sendSignal();},11000);
   stage.addEventListener('pointermove',move);stage.addEventListener('pointerleave',leave);button?.addEventListener('click',sendSignal);reduced.addEventListener('change',preference);
   resize();
-  return ()=>{resizeObserver.disconnect();intersection.disconnect();cancelAnimationFrame(frame);stage.removeEventListener('pointermove',move);stage.removeEventListener('pointerleave',leave);button?.removeEventListener('click',sendSignal);reduced.removeEventListener('change',preference);};
+  return ()=>{clearInterval(pulseTimer);resizeObserver.disconnect();intersection.disconnect();cancelAnimationFrame(frame);stage.removeEventListener('pointermove',move);stage.removeEventListener('pointerleave',leave);button?.removeEventListener('click',sendSignal);reduced.removeEventListener('change',preference);};
 }

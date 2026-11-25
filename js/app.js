@@ -1,7 +1,71 @@
 import {getJSON,getNow,safeURL,sendMessage,loadMotionLibraries} from './api.js';
 import {startSculpture} from './sculpture.js';
+import {startConstellation} from './constellation.js';
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+const intro=document.querySelector('#intro-sequence');
+let introSeen=false;
+if(intro&&!reduced.matches){
+  try{
+    introSeen=sessionStorage.getItem('portfolio-intro-seen')==='true';
+    if(!introSeen)sessionStorage.setItem('portfolio-intro-seen','true');
+  }catch(error){console.warn('The intro could not be remembered for this browser session.',error);}
+}
+if(intro&&!reduced.matches&&!introSeen){
+  const skip=intro.querySelector('#intro-skip');
+  let finished=false;
+  const finish=()=>{
+    if(finished)return;
+    finished=true;
+    clearTimeout(introTimer);
+    intro.classList.add('is-exiting');
+    window.removeEventListener('keydown',onIntroKey);
+    window.setTimeout(()=>{intro.hidden=true;},750);
+  };
+  const onIntroKey=event=>{if(event.key==='Escape')finish();};
+  const introTimer=window.setTimeout(finish,2300);
+  skip.addEventListener('click',finish);
+  window.addEventListener('keydown',onIntroKey);
+  intro.hidden=false;
+  requestAnimationFrame(()=>intro.classList.add('is-active'));
+}
+
+document.querySelectorAll('[data-film-track]').forEach(track=>{
+  const video=track.querySelector('.scroll-film');
+  if(!video)return;
+  let queued=false,pendingTime=null;
+  const updateControls=()=>{
+    video.controls=false;
+    if(reduced.matches)video.pause();
+    else schedule();
+  };
+  const applyPendingTime=()=>{
+    if(pendingTime===null||video.seeking||!video.paused)return;
+    const time=pendingTime;
+    pendingTime=null;
+    if(Math.abs(video.currentTime-time)>.04)video.currentTime=time;
+  };
+  const scrub=()=>{
+    queued=false;
+    if(reduced.matches||!Number.isFinite(video.duration)||video.duration<=0||!video.paused)return;
+    const trackTop=track.getBoundingClientRect().top+scrollY;
+    const travel=Math.max(1,track.offsetHeight-innerHeight*.65);
+    const start=trackTop-innerHeight*.2;
+    const progress=Math.max(0,Math.min(1,(scrollY-start)/travel));
+    pendingTime=progress*video.duration;
+    applyPendingTime();
+  };
+  const schedule=()=>{if(!queued){queued=true;requestAnimationFrame(scrub);}};
+  window.addEventListener('scroll',schedule,{passive:true});
+  window.addEventListener('resize',schedule,{passive:true});
+  video.addEventListener('loadedmetadata',schedule);
+  video.addEventListener('seeked',applyPendingTime);
+  video.addEventListener('play',schedule);
+  video.addEventListener('pause',schedule);
+  reduced.addEventListener('change',updateControls);
+  updateControls();
+});
 const sculpture=document.querySelector('#sculpture');if(sculpture)startSculpture(sculpture,reduced);
+const constellation=document.querySelector('#constellation');if(constellation)startConstellation(constellation,reduced);
 
 const revealTargets=[...document.querySelectorAll('.about-portrait, .intro-section > div, .section-heading > h2, .section-heading > p, .work-intro, .work-item, .code-section > div, .syntax-top, .syntax-stage > h2, .journey-entry, .beyond-section h2, .team-photo, .beyond-links > a, .now-section > *, .contact-top, .contact-section h2, .contact-bottom')];
 if(revealTargets.length&&!reduced.matches&&'IntersectionObserver' in window){
@@ -26,7 +90,7 @@ if(revealTargets.length&&!reduced.matches&&'IntersectionObserver' in window){
 const workItems=[...document.querySelectorAll('.work-item')];
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
   const positions=new Map(workItems.map(item=>[item,item.getBoundingClientRect()]));
-  document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+  document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===button.dataset.filter)));
   document.querySelector('.work-gallery').classList.toggle('is-filtered',button.dataset.filter!=='All');
   let count=0;
   workItems.forEach(item=>{item.hidden=button.dataset.filter!=='All'&&!item.dataset.categories.split(' ').includes(button.dataset.filter);if(!item.hidden)count++;});
@@ -71,9 +135,8 @@ if(syntaxSection){
     const focusObserver=new IntersectionObserver(([entry])=>syntaxSection.classList.toggle('is-in-view',entry.isIntersecting),{threshold:.18});
     focusObserver.observe(syntaxSection);
   }
-  const stage=syntaxSection.querySelector('.syntax-stage'),toggle=syntaxSection.querySelector('#syntax-toggle');
+  const stage=syntaxSection.querySelector('.syntax-stage');
   let syntaxFrame=0,nextX=0,nextY=0;
-  toggle.addEventListener('click',()=>{const active=toggle.getAttribute('aria-pressed')!=='true';toggle.setAttribute('aria-pressed',String(active));syntaxSection.classList.toggle('is-exploring',active);toggle.firstChild.textContent=active?'Back to the thought ':'Explore the code ';});
   function paintSyntax(){syntaxFrame=0;stage.style.setProperty('--syntax-x',`${nextX}px`);stage.style.setProperty('--syntax-y',`${nextY}px`);}
   stage.addEventListener('pointermove',event=>{if(reduced.matches||event.pointerType==='touch')return;const bounds=stage.getBoundingClientRect();nextX=(event.clientX-bounds.left-bounds.width/2)*.025;nextY=(event.clientY-bounds.top-bounds.height/2)*.04;if(!syntaxFrame)syntaxFrame=requestAnimationFrame(paintSyntax);});
   stage.addEventListener('pointerleave',()=>{nextX=nextY=0;if(!syntaxFrame)syntaxFrame=requestAnimationFrame(paintSyntax);});
@@ -90,3 +153,28 @@ document.querySelectorAll('[data-gallery]').forEach(gallery=>{
   gallery.querySelector('[data-gallery-prev]').addEventListener('click',()=>show(current-1));
   gallery.querySelector('[data-gallery-next]').addEventListener('click',()=>show(current+1));
 });
+
+const surpriseTrigger=document.querySelector('#open-surprise');
+const surpriseDialog=document.querySelector('#surprise-dialog');
+const surpriseVideo=document.querySelector('#surprise-video');
+const surpriseClose=document.querySelector('#close-surprise');
+if(surpriseTrigger&&surpriseDialog&&surpriseVideo){
+  let returnFocus;
+  surpriseTrigger.addEventListener('click',()=>{
+    returnFocus=document.activeElement;
+    surpriseDialog.showModal();
+    const video=document.createElement('iframe');
+    video.title='Rick Astley music video';
+    video.src='https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1&playsinline=1&rel=0';
+    video.allow='autoplay; encrypted-media; picture-in-picture';
+    video.referrerPolicy='strict-origin-when-cross-origin';
+    video.allowFullscreen=true;
+    surpriseVideo.replaceChildren(video);
+  });
+  surpriseClose?.addEventListener('click',()=>surpriseDialog.close());
+  surpriseDialog.addEventListener('click',event=>{if(event.target===surpriseDialog)surpriseDialog.close();});
+  surpriseDialog.addEventListener('close',()=>{
+    surpriseVideo.replaceChildren();
+    returnFocus?.focus();
+  });
+}

@@ -1,4 +1,13 @@
 $nav
+<div class="intro-sequence" id="intro-sequence" hidden>
+  <div class="intro-sequence__inner">
+    <span class="intro-sequence__eyebrow">Portfolio / 2026</span>
+    <p class="intro-sequence__name" aria-label="Kaustubh Chaturvedi"><span>Kaustubh</span><span>Chaturvedi<span class="title-period">.</span></span></p>
+    <span class="intro-sequence__line" aria-hidden="true"></span>
+    <span class="intro-sequence__role">Engineer · creator · curious by default</span>
+  </div>
+  <button class="intro-sequence__skip" id="intro-skip" type="button">Skip intro <span aria-hidden="true">↗</span></button>
+</div>
 <main id="main">
 <section class="hero shell" aria-labelledby="hero-title">
   <div class="hero-kicker"><span>CSE student & ML engineer</span><span class="availability"><i></i> Open to AI/ML internships</span><span>Portfolio / 2026</span></div>
@@ -6,8 +15,28 @@ $nav
   <div class="hero-bottom"><p>I build intelligent systems.<br>And care how they meet the world.</p><p>Machine learning. Useful software.<br>A little hardware. A lot of curiosity.</p><a class="action-link" href="#work">Meet the work <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-7-7 7 7 7-7"/></svg></a></div>
 </section>
 <section class="intro-section shell" id="about"><figure class="about-portrait"><img src="/assets/photos/portrait.webp" alt="Kaustubh seated among purple flowers outdoors" width="1200" height="1600" loading="lazy" decoding="async"><figcaption>A little about me</figcaption></figure><div><h2>An engineer’s mind.<br>A creator’s eye.</h2><div class="intro-columns"><p>I’m a Computer Science & Engineering student at MIT Manipal, building across local AI, learning systems and software that does something useful.</p><p>I help build rockets with thrustMIT. I also lead marketing at AIESEC in M.A.H.E. and share a little of college life as @itskaustheta. Different outlets, same curiosity.</p></div></div></section>
-<section class="work-section shell" id="work" aria-labelledby="work-title"><div class="section-heading"><h2 id="work-title">Selected<br><span class="offset-word">work.</span></h2><div class="work-intro"><p>From an idea in my head<br>to something in your hands.</p><span>ML / Software / Embedded</span></div></div><div class="work-toolbar"><div class="filters" role="group" aria-label="Filter projects"><button type="button" data-filter="All" aria-pressed="true">All <span>05</span></button><button type="button" data-filter="ML" aria-pressed="false">ML</button><button type="button" data-filter="Software" aria-pressed="false">Software</button><button type="button" data-filter="Embedded" aria-pressed="false">Embedded</button><button type="button" data-filter="Flight" aria-pressed="false">Flight</button></div><span id="project-count" role="status">5 projects</span></div><div class="work-gallery">$project_items</div><p class="media-note">Project visuals are original concept studies. Personal photographs appear in the journey below.</p></section>
-<section class="code-section shell" aria-labelledby="code-title"><div><span class="section-index">Under the surface</span><h2 id="code-title">Ideas become<br>instructions.</h2><p>A small piece of this site’s interactive network. Move across the hero, then send a signal through it.</p><a class="action-link" href="/js/sculpture.js">Read the animation source $arrow</a></div><div class="code-sheet"><div class="code-header"><span>sculpture.js</span><span>Live site source</span></div><pre><code><span class="code-comment">// A little motion, with a little restraint.</span>
+<section class="constellation-section shell" id="network" aria-labelledby="network-title">
+  <div class="constellation-intro">
+    <span class="section-index">A few connected dots</span>
+    <h2 id="network-title">Good work<br>is a team sport.</h2>
+    <p>Pick a signal to filter the work. The rest is just here to play with.</p>
+  </div>
+  <div class="constellation-stage">
+    <canvas id="constellation" aria-hidden="true"></canvas>
+    <div class="constellation-nodes" role="group" aria-label="Skills and social links">
+      <button class="constellation-node" style="--node-x:18%;--node-y:31%" type="button" data-filter="ML" aria-pressed="false">Machine learning</button>
+      <button class="constellation-node" style="--node-x:43%;--node-y:18%" type="button" data-filter="Software" aria-pressed="false">Software</button>
+      <button class="constellation-node" style="--node-x:72%;--node-y:29%" type="button" data-filter="Embedded" aria-pressed="false">Embedded</button>
+      <button class="constellation-node" style="--node-x:84%;--node-y:58%" type="button" data-filter="Flight" aria-pressed="false">Flight systems</button>
+      <a class="constellation-node constellation-social" style="--node-x:65%;--node-y:78%" href="https://github.com/kaus-thetaa" rel="noopener">GitHub</a>
+      <a class="constellation-node constellation-social" style="--node-x:34%;--node-y:77%" href="https://linkedin.com/in/kaustubh-chaturvedi" rel="noopener">LinkedIn</a>
+      <a class="constellation-node constellation-social" style="--node-x:49%;--node-y:53%" href="https://instagram.com/itskaustheta" rel="noopener">Instagram</a>
+    </div>
+    <div class="constellation-footer"><span>Move through the network</span><button type="button" id="network-pulse">Send a signal <span aria-hidden="true">↗</span></button></div>
+  </div>
+</section>
+<section class="work-section shell" id="work" aria-labelledby="work-title"><div class="section-heading"><h2 id="work-title">Selected<br><span class="offset-word">work.</span></h2><div class="work-intro"><p>From an idea in my head<br>to something in your hands.</p><span>ML / Software / Embedded</span></div></div><div class="work-toolbar"><div class="filters" role="group" aria-label="Filter projects"><button type="button" data-filter="All" aria-pressed="true">All <span>$project_total</span></button><button type="button" data-filter="ML" aria-pressed="false">ML</button><button type="button" data-filter="Software" aria-pressed="false">Software</button><button type="button" data-filter="Embedded" aria-pressed="false">Embedded</button><button type="button" data-filter="Flight" aria-pressed="false">Flight</button></div><span id="project-count" role="status">$project_total projects</span></div><div class="work-gallery">$project_items</div><p class="media-note">Selected work, seen from different angles. A live link means the project is running; concept studies are labelled.</p></section>
+<section class="code-section shell" aria-labelledby="code-title"><div><span class="section-index">Under the surface</span><h2 id="code-title">Ideas become<br>instructions.</h2><p>A small piece of this site’s interactive network. Move across the hero, then send a signal through it.</p></div><div class="code-sheet"><div class="code-header"><span>sculpture.js</span><span>Live site source</span></div><pre><code><span class="code-comment">// A little motion, with a little restraint.</span>
 <span class="code-key">function</span> <span class="code-fn">easeToward</span>(current, target) {
   <span class="code-key">return</span> current + (target - current) * .08;
 }
@@ -16,7 +45,7 @@ $nav
   pulseStart = performance.now();
   schedule();
 }</code></pre><div class="code-footer">Pointer → rotation → projection → pixels</div></div></section>
-<section class="syntax-section shell" aria-labelledby="syntax-title"><div class="syntax-top"><span>Somewhere between logic and imagination.</span><button type="button" id="syntax-toggle" aria-pressed="false">Explore the code $arrow</button></div><div class="syntax-stage"><div class="syntax-field" aria-hidden="true">$syntax_field</div><h2 id="syntax-title"><span>Think in <em>systems.</em></span><span>Build with <em>curiosity.</em></span></h2><p class="syntax-caption">Move across the code. Follow a thought.</p></div></section>
+<section class="syntax-section shell" aria-labelledby="syntax-title"><div class="syntax-top"><span>SCULPTURE.JS / LIVE SOURCE</span><span class="syntax-status"><i></i> Motion, in a few lines</span></div><div class="syntax-stage"><div class="syntax-field" aria-hidden="true">$syntax_field</div><h2 id="syntax-title"><span>Think in <em>systems.</em></span><span>Build with <em>curiosity.</em></span></h2></div></section>
 <section class="journey-section shell" id="journey" aria-labelledby="journey-title"><div class="section-heading"><h2 id="journey-title">A work<br><span class="offset-word">in progress.</span></h2><p>Where I’ve been.<br>What I’m becoming.</p></div><div class="journey-layout"><aside class="journey-rail"><span class="rail-label">The journey</span><div class="active-year" aria-hidden="true">2026</div><nav aria-label="Jump to a year">$year_links</nav><div class="journey-progress" aria-hidden="true"><span></span></div><p>Engineering and leadership.<br>Some chapters overlap.</p></aside><div class="journey-events">$timeline_groups</div></div></section>
 <section class="beyond-section shell"><div class="section-index">Beyond the code</div><div><h2>Building things.<br>Bringing people along.</h2><figure class="team-photo"><img src="/assets/photos/thrustmit-team.webp" alt="thrustMIT team gathered behind a rocket at a campus display" width="1600" height="1200" loading="lazy" decoding="async"><figcaption>Good systems take good teams.</figcaption></figure><div class="beyond-links"><a href="https://kaus-thetaa.github.io/zanskar/" rel="noopener"><div><span>Commerce & creative work</span><h3>Zanskar</h3></div><p>A storefront for<br>Himalayan bracelets.</p>$arrow</a><a href="https://instagram.com/itskaustheta" rel="noopener"><div><span>Creator side</span><h3>@itskaustheta</h3></div><p>A different side<br>of the same curiosity.</p>$arrow</a></div></div></section>
 <section class="now-section shell"><div><span class="availability"><i></i> Right now</span><div id="now-content"><strong>Open to AI/ML internships</strong><p>Looking for teams building useful AI products.</p></div></div><a id="latest-commit" href="https://github.com/kaus-thetaa" rel="noopener"><span>From the workbench</span><strong>Explore the latest on GitHub</strong>$arrow</a></section>
