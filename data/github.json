@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T01:43:08.205Z",
+  "updated": "2026-11-25T05:20:21.546Z",
   "publicRepoCount": 19,
   "repos": [
     {
@@ -8,13 +8,13 @@
       "language": "HTML",
       "topics": [],
       "stars": 0,
-      "pushed_at": "2026-11-25T01:42:50Z",
+      "pushed_at": "2026-11-25T05:20:04Z",
       "url": "https://github.com/kaus-thetaa/kaus-thetaa.github.io",
       "archived": false,
       "latestCommit": {
-        "message": "Finalize photo publication and remove temporary stock assets",
-        "date": "2026-11-25T01:42:48Z",
-        "url": "https://github.com/kaus-thetaa/kaus-thetaa.github.io/commit/c46fa04f732c22c5a188c5450571a7dfb2c33e2e",
+        "message": "feat: improve slideshow and scroll interactions",
+        "date": "2026-11-25T05:20:02Z",
+        "url": "https://github.com/kaus-thetaa/kaus-thetaa.github.io/commit/c7378d288624f6fd709c5ee365e86d7cd9ce6312",
         "repo": "kaus-thetaa.github.io"
       }
     },
