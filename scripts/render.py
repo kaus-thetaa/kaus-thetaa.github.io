@@ -21,13 +21,13 @@ def link(url, label, cls=''):
 
 def head(title, description, path='/', image='og.jpg'):
     return f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101110"><title>{ESC(title)}</title><meta name="description" content="{ESC(description)}"><link rel="canonical" href="https://kaus-thetaa.github.io{path}"><meta property="og:title" content="{ESC(title)}"><meta property="og:description" content="{ESC(description)}"><meta property="og:type" content="website"><meta property="og:url" content="https://kaus-thetaa.github.io{path}"><meta property="og:image" content="https://kaus-thetaa.github.io/assets/{image}"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/body.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/style.css?v=20261125-5"></head><body><a class="skip-link" href="#main">Skip to content</a>'''
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101110"><title>{ESC(title)}</title><meta name="description" content="{ESC(description)}"><link rel="canonical" href="https://kaus-thetaa.github.io{path}"><meta property="og:title" content="{ESC(title)}"><meta property="og:description" content="{ESC(description)}"><meta property="og:type" content="website"><meta property="og:url" content="https://kaus-thetaa.github.io{path}"><meta property="og:image" content="https://kaus-thetaa.github.io/assets/{image}"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/body.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/style.css?v=20261125-9"></head><body><a class="skip-link" href="#main">Skip to content</a>'''
 
 def nav():
     return f'''<header class="site-header shell"><a class="brand" href="/" aria-label="KC — Kaustubh Chaturvedi home">K<span>C</span><span class="brand-dot">.</span></a><span class="header-location">Independent mind.<br>Manipal, India <span id="local-time"></span></span><nav aria-label="Main navigation"><a href="/#work">Work</a><a href="/#journey">Journey</a><a href="/#about">About</a><a href="/#contact">Let’s talk {ARROW}</a></nav></header>'''
 
 def footer():
-    return f'''<footer class="site-footer shell"><div><span>Kaustubh Chaturvedi</span><span>Made with curiosity & code.</span></div><div>{link(profile['zanskar'],'Zanskar')}{link(profile['github'],'GitHub')}<a href="#main">Back to top {ARROW}</a></div></footer><script type="module" src="/js/app.js?v=20261125"></script></body></html>'''
+    return f'''<footer class="site-footer shell"><div><span>Kaustubh Chaturvedi</span><span>Made with curiosity & code.</span><button class="surprise-trigger" id="open-surprise" type="button">One more thing?</button></div><div>{link(profile['zanskar'],'Zanskar')}{link(profile['github'],'GitHub')}<a href="#main">Back to top {ARROW}</a></div></footer><dialog class="surprise-dialog" id="surprise-dialog" aria-labelledby="surprise-title"><div class="surprise-dialog__top"><span>Bonus track / no redirects</span><button class="surprise-close" id="close-surprise" type="button" aria-label="Close surprise">×</button></div><div class="surprise-dialog__content"><div class="surprise-poster" aria-hidden="true"><span>♪</span><span>unexpected<br>but not unwelcome</span><i></i></div><div><h2 id="surprise-title">You found the<br><em>bonus track.</em></h2><p>Stay right here. The work will still be waiting when you get back.</p><div class="surprise-video" id="surprise-video"></div></div></div></dialog><script type="module" src="/js/app.js?v=20261125-5"></script></body></html>'''
 
 def artwork(p):
     slug=p['slug']
@@ -40,14 +40,21 @@ def artwork(p):
         art='''<svg class="race-track" viewBox="0 0 900 530" fill="none" aria-hidden="true"><path d="M200 170C115 60 620 20 690 139S534 255 585 347 280 495 222 384 308 280 200 170Z" stroke="#41443d" stroke-width="68"/><path d="M200 170C115 60 620 20 690 139S534 255 585 347 280 495 222 384 308 280 200 170Z" stroke="#a9b39d" stroke-width="1.5" stroke-dasharray="6 12"/><path d="M200 170C115 60 620 20 690 139S534 255 585 347 280 495 222 384 308 280 200 170Z" stroke="#d8e1cc" stroke-width="1" transform="translate(6 -8)"/><rect x="210" y="175" width="12" height="28" fill="#e2e5dc" transform="rotate(-25 216 189)"/></svg><span class="art-word race-word" aria-hidden="true">Learn.<br>Lap. Repeat.</span>'''
     elif slug=='veilrelay':
         art='''<div class="veil-type" aria-hidden="true"><span>Some things</span><span>stay <i>private.</i></span><div class="redaction"><span>Detected value</span><b>[REDACTED]</b></div></div>'''
+    elif slug=='tmit-plotter':
+        art='''<div class="plotter-interface" aria-hidden="true"><div class="plotter-top"><span>THRUSTMIT / TELEMETRY</span><span>SIMULATED SIGNAL <i></i></span></div><div class="plotter-readouts"><div><span>ALTITUDE</span><strong>1,284<span>m</span></strong></div><div><span>VELOCITY</span><strong>46.8<span>m/s</span></strong></div><div><span>FLIGHT STATE</span><strong>COAST</strong></div></div><svg class="plotter-chart" viewBox="0 0 760 220" fill="none"><path d="M0 180h760M0 125h760M0 70h760M80 0v220M230 0v220M380 0v220M530 0v220M680 0v220" stroke="currentColor" opacity=".12"/><path d="M0 176C66 176 77 165 118 168S180 155 224 160 273 120 316 136 372 102 416 113 464 70 512 86 570 44 608 54 661 28 760 18" stroke="currentColor" stroke-width="2"/><path d="M0 176C66 176 77 165 118 168S180 155 224 160 273 120 316 136 372 102 416 113 464 70 512 86 570 44 608 54 661 28 760 18V220H0Z" fill="currentColor" opacity=".07"/></svg><div class="plotter-bottom"><span>DISPLAY</span><span>TELEMETRY</span><span>MOTOR TEST</span><span>FILTERS</span></div></div>'''
     else:
         art='''<div class="ground-art" aria-hidden="true"><div class="ground-label"><span>Acquire.</span><span>Understand.</span><span>Act.</span></div><svg viewBox="0 0 900 300" fill="none"><path d="M0 150h900M0 75h900M0 225h900M150 0v300M300 0v300M450 0v300M600 0v300M750 0v300" stroke="currentColor" opacity=".12"/><path d="M0 235h90l18-15 18 20 22-55 22 48 23-130 24 112 22-48 22 24 20-75 25 65 20-132 20 90 25-72 25 80 26-43 25 75 30-30 25 39 30-19 25 48 32-20 30 43 25-15 25 25h130" stroke="currentColor" stroke-width="2"/></svg><strong>Signal to system.</strong></div>'''
-    return f'<div class="project-art art-{slug}">{art}<div class="art-caption"><span>Concept study</span><span>{ESC(p["title"])}</span></div></div>'
+    return f'<div class="project-art art-{slug}">{art}<div class="art-caption"><span>{ESC(p.get("visualLabel","Concept study"))}</span><span>{ESC(p["title"])}</span></div></div>'
 
 def project_markup():
     output=[]
     for i,p in enumerate(projects):
-        output.append(f'''<article class="work-item work-item-{i+1}" data-categories="{' '.join(p['category'])}"><a class="work-media" href="/projects/{p['slug']}/" aria-label="Explore {ESC(p['title'])}">{artwork(p)}<span class="media-open" aria-hidden="true">Explore project {ARROW}</span></a><div class="work-meta"><div><span class="work-category">{' / '.join(p['category'])}</span><h3><a href="/projects/{p['slug']}/">{ESC(p['title'])}</a></h3></div><p>{ESC(p['subtitle'])}</p></div></article>''')
+        project_links=[link(p['repoUrl'],'View repository')]
+        if p.get('demo'):
+            project_links.insert(0,link(p['demo'],'Live demo'))
+        actions=''.join(project_links)
+        status='In progress' if p.get('status')=='building' else 'Ready to explore'
+        output.append(f'''<article class="work-item work-item-{i+1}" data-categories="{' '.join(p['category'])}"><a class="work-media" href="/projects/{p['slug']}/" aria-label="Explore {ESC(p['title'])}">{artwork(p)}<span class="media-open" aria-hidden="true">Case study {ARROW}</span></a><div class="work-meta"><div><span class="work-category">{' / '.join(p['category'])} <i>·</i> {status}</span><h3><a href="/projects/{p['slug']}/">{ESC(p['title'])}</a></h3></div><p>{ESC(p['subtitle'])}</p></div><div class="work-actions">{actions}</div></article>''')
     return ''.join(output)
 
 def timeline_markup():
@@ -58,16 +65,62 @@ def timeline_markup():
             if not entry.get('confirmed') or '[verify]' in json.dumps(entry): continue
             e={k:ESC(str(v)) for k,v in entry.items()}
             ongoing=entry['end'] is None
+            folder=re.sub(r'[^a-z0-9]+','-',entry['organization'].lower()+'-'+entry['role'].lower()).strip('-')
+            media_dir=ROOT/'assets'/'journey'/folder
+            media_dir.mkdir(parents=True,exist_ok=True)
+            files=sorted(p for p in media_dir.iterdir() if p.suffix.lower() in ['.jpg','.jpeg','.png','.webp','.mp4'])
+            image_items=[]
+            for item in entry.get('gallery',[]):
+                image_items.append({
+                    'src':f'/assets/photos/{item["photo"]}.webp',
+                    'alt':item['alt'],
+                    'caption':item['caption'],
+                    'width':int(item['width']),
+                    'height':int(item['height']),
+                })
+            film_items=[]
+            for media_file in files:
+                src='/'+media_file.relative_to(ROOT).as_posix()
+                if media_file.suffix.lower()=='.mp4':
+                    if not film_items:
+                        caption=re.sub(r'^\d+[-_. ]*','',media_file.stem).replace('-',' ').replace('_',' ').title().replace('Irec','IREC')
+                        film_items.append({'src':src,'caption':caption})
+                else:
+                    image_items.append({
+                        'src':src,
+                        'alt':f'{entry["organization"]} — {media_file.stem.replace("-"," ").replace("_"," ")}',
+                        'caption':media_file.stem.replace('-',' ').replace('_',' ').title(),
+                    })
+            if not image_items and entry.get('photo'):
+                image_items.append({
+                    'src':f'/assets/photos/{e["photo"]}.webp',
+                    'alt':e['photoAlt'],
+                    'caption':e['photoCaption'],
+                    'width':1600,
+                    'height':1200 if entry['photo']=='thrustmit-rocket' else 900,
+                })
+
+            def image_markup(item):
+                dimensions=f' width="{item["width"]}" height="{item["height"]}"' if item.get('width') and item.get('height') else ''
+                return f'<img src="{ESC(item["src"])}" alt="{ESC(item["alt"])}"{dimensions} loading="lazy" decoding="async">'
+
             photo=''
-            if entry.get('gallery'):
-                slides=[]
-                for index,item in enumerate(entry['gallery']):
-                    slides.append(f'''<figure class="journey-slide{' is-active' if index == 0 else ''}" data-slide="{index}" aria-hidden="{'false' if index == 0 else 'true'}"><div class="journey-slide-frame"><img src="/assets/photos/{ESC(item['photo'])}.webp" alt="{ESC(item['alt'])}" width="{int(item['width'])}" height="{int(item['height'])}" loading="lazy" decoding="async"></div><figcaption>{ESC(item['caption'])}</figcaption></figure>''')
-                photo=f'''<div class="journey-gallery" data-gallery aria-label="thrustMIT engineering photographs"><div class="journey-slides">{''.join(slides)}</div><div class="gallery-controls"><span class="gallery-count" aria-live="polite">01 / {len(slides):02d}</span><div><button type="button" data-gallery-prev aria-label="Previous photograph">←</button><button type="button" data-gallery-next aria-label="Next photograph">→</button></div></div></div>'''
-            elif entry.get('photo'):
-                photo=f'<figure class="journey-photo"><img src="/assets/photos/{e["photo"]}.webp" alt="{e["photoAlt"]}" width="1600" height="{1200 if entry["photo"]=="thrustmit-rocket" else 900}" loading="lazy" decoding="async"><figcaption>{e["photoCaption"]}</figcaption></figure>'
+            if len(image_items)==1:
+                item=image_items[0]
+                photo=f'<figure class="journey-photo"><div class="journey-slide-frame">{image_markup(item)}</div><figcaption>{ESC(item["caption"])}</figcaption></figure>'
+            elif image_items:
+                slides=''.join(
+                    f'''<figure class="journey-slide{' is-active' if index==0 else ''}" data-slide="{index}" aria-hidden="{'false' if index==0 else 'true'}"><div class="journey-slide-frame">{image_markup(item)}</div><figcaption>{ESC(item["caption"])}</figcaption></figure>'''
+                    for index,item in enumerate(image_items)
+                )
+                photo=f'''<div class="journey-gallery" data-gallery aria-label="{ESC(entry["organization"])} photographs"><div class="journey-slides">{slides}</div><div class="gallery-controls"><span class="gallery-count" aria-live="polite">01 / {len(image_items):02d}</span><div><button type="button" data-gallery-prev aria-label="Previous photograph">←</button><button type="button" data-gallery-next aria-label="Next photograph">→</button></div></div></div>'''
+
+            films=''.join(
+                f'''<figure class="journey-film"><div class="journey-film-track" data-film-track><div class="journey-film-stage"><video class="scroll-film" src="{ESC(item["src"])}" muted playsinline preload="auto" aria-label="{ESC(entry["organization"])} launch film"></video></div></div><figcaption>{ESC(item["caption"])}</figcaption></figure>'''
+                for item in film_items
+            )
             org=link(entry['url'],entry['organization']) if entry.get('url') else e['organization']
-            entries.append(f'''<li class="journey-entry {e.get('emphasis','')}"><div class="journey-date"><time datetime="{e['start']}">{e['dateLabel']}</time>{'<span class="ongoing">Current role</span>' if ongoing else ''}</div><p class="journey-org">{org}</p><h4>{e['role']}</h4><p class="journey-description">{e['description']}</p><span class="journey-category">{e['type']}</span>{photo}</li>''')
+            entries.append(f'''<li class="journey-entry {e.get('emphasis','')}"><div class="journey-date"><time datetime="{e['start']}">{e['dateLabel']}</time>{'<span class="ongoing">Current role</span>' if ongoing else ''}</div><p class="journey-org">{org}</p><h4>{e['role']}</h4><p class="journey-description">{e['description']}</p><span class="journey-category">{e['type']}</span>{photo}{films}</li>''')
         year=ESC(group['year'])
         groups.append(f'<section class="journey-year-group" id="year-{year}" data-year="{year}" aria-labelledby="label-{year}"><h3 id="label-{year}">{year}</h3><ol>{"".join(entries)}</ol></section>')
     return ''.join(groups)
@@ -87,6 +140,7 @@ def syntax_field():
 context={
  'syntax_field':syntax_field(),
  'nav':nav(),'footer':footer(),'arrow':ARROW,'project_items':project_markup(),'timeline_groups':timeline_markup(),
+ 'project_total':f'{len(projects):02d}',
  'github':link(profile['github'],'GitHub'),'zanskar':link(profile['zanskar'],'Zanskar'),
  'linkedin':link(profile['linkedin'],'LinkedIn'),'instagram':link(profile['instagram'],'Instagram'),
  'email':ESC(profile['publicEmail']),

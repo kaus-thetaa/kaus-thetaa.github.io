@@ -74,3 +74,10 @@ The timeline foregrounds thrustMIT Junior Engineer and keeps LCVP Marketing smal
 
 ## Photo publication update, 25 November 2026
 The owner supplied and authorized the selected portrait, AIESEC group and two thrustMIT photographs. Optimized WebP copies replace temporary stock imagery; original backgrounds are preserved. The prior preview-only publication hold is resolved. NCC now reads Senior Under Officer (SUO). The interactive typography section uses actual animation source and VS Code-inspired syntax colours.
+
+## Interactive portfolio update, 25 November 2026
+The homepage now opens with a skippable name reveal (once per browser session, omitted for reduced motion), uses clip-mask and directional scroll reveals instead of a generic fade, and includes a pointer-responsive skill/social constellation. The constellation filters the project list and sends finite signal pulses. The code card rests at a slight perspective angle and straightens on hover/focus.
+
+Journey media lives in role-specific folders under `assets/journey/`. Photos join the existing gallery; one MP4 per role gets a sticky, scroll-scrubbed film panel without visible player controls. Reduced-motion visitors see the paused opening frame. The supplied IREC launch clip is in the thrustMIT folder. Keep the `.gitkeep` files so empty role folders remain available in Git.
+
+The project gallery now includes the ThrustMIT tMIT Plotter repo, marked as in progress. Its configured Pages URL returned 404 during this update, so the card links to its repository rather than claiming a live demo. A footer bonus opens the official music video inside a closable dialog and only loads the embed after the visitor chooses it.

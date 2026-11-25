@@ -165,6 +165,42 @@
       "repoUrl": "https://github.com/kaus-thetaa/motor-test",
       "sourceUrl": "https://github.com/kaus-thetaa/motor-test/blob/main/README.md",
       "confirmed": true
+    },
+    {
+      "slug": "tmit-plotter",
+      "title": "tMIT Plotter 2026–27",
+      "subtitle": "A ground station for the whole flight.",
+      "category": [
+        "Embedded",
+        "Flight",
+        "Software"
+      ],
+      "repo": "tmit-plotter-2026-27",
+      "status": "building",
+      "problem": "Rocket testing needs a readable place to inspect telemetry, exercise hardware workflows and understand flight data.",
+      "built": "A browser-based ThrustMIT ground station with display, telemetry, motor-test and CSV-filtering modes.",
+      "result": "Each hardware mode includes simulated data; compatible desktop browsers can connect through Web Serial.",
+      "stack": [
+        "TypeScript",
+        "Next.js",
+        "Tailwind",
+        "uPlot",
+        "Web Serial"
+      ],
+      "detail": "The telemetry view groups flight, sensor, environment, GPS, radio, continuity and battery panels. Flight state is derived from barometric pressure and altitude, and session data can be downloaded as CSV.",
+      "limit": "Active development. Web Serial requires a supported desktop browser and connected hardware; simulated data is available for exploring the interface.",
+      "diagram": [
+        "Sensors / simulator",
+        "Telemetry stream",
+        "Flight-state estimate",
+        "Console + CSV"
+      ],
+      "media": "tmit-plotter",
+      "visualLabel": "Interface study",
+      "source": "README.md",
+      "repoUrl": "https://github.com/kaus-thetaa/tmit-plotter-2026-27",
+      "sourceUrl": "https://github.com/kaus-thetaa/tmit-plotter-2026-27/blob/main/README.md",
+      "confirmed": true
     }
   ]
 }
