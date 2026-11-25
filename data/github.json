@@ -1,37 +1,37 @@
 {
-  "updated": "2026-11-25T07:30:59.583Z",
+  "updated": "2026-11-25T09:55:35.751Z",
   "publicRepoCount": 19,
   "repos": [
-    {
-      "name": "kaus-thetaa.github.io",
-      "description": "Kaustubh Chaturvedi: ML, software and embedded systems portfolio",
-      "language": "HTML",
-      "topics": [],
-      "stars": 0,
-      "pushed_at": "2026-11-25T07:30:45Z",
-      "url": "https://github.com/kaus-thetaa/kaus-thetaa.github.io",
-      "archived": false,
-      "latestCommit": {
-        "message": "build: regenerate portfolio pages and expand browser QA",
-        "date": "2026-11-25T07:30:27Z",
-        "url": "https://github.com/kaus-thetaa/kaus-thetaa.github.io/commit/3ee4c6af25d4135a09a56e18681b35194b6a4e78",
-        "repo": "kaus-thetaa.github.io"
-      }
-    },
     {
       "name": "kaus-thetaa",
       "description": null,
       "language": "Python",
       "topics": [],
       "stars": 0,
-      "pushed_at": "2026-11-24T14:55:18Z",
+      "pushed_at": "2026-11-25T08:50:51Z",
       "url": "https://github.com/kaus-thetaa/kaus-thetaa",
       "archived": false,
       "latestCommit": {
-        "message": "chore: refresh LeetCode isometric graphs",
-        "date": "2026-11-24T14:55:17Z",
-        "url": "https://github.com/kaus-thetaa/kaus-thetaa/commit/118da4e5e3f1dd5d0b0239fb712f1645fb51e847",
+        "message": "Update Git Koi",
+        "date": "2026-11-25T08:50:49Z",
+        "url": "https://github.com/kaus-thetaa/kaus-thetaa/commit/d785a7f7c8f4df481f88a89c4ed5d3514c9219db",
         "repo": "kaus-thetaa"
+      }
+    },
+    {
+      "name": "kaus-thetaa.github.io",
+      "description": "Kaustubh Chaturvedi: ML, software and embedded systems portfolio",
+      "language": "HTML",
+      "topics": [],
+      "stars": 0,
+      "pushed_at": "2026-11-25T07:31:00Z",
+      "url": "https://github.com/kaus-thetaa/kaus-thetaa.github.io",
+      "archived": false,
+      "latestCommit": {
+        "message": "Update public GitHub activity",
+        "date": "2026-11-25T07:30:59Z",
+        "url": "https://github.com/kaus-thetaa/kaus-thetaa.github.io/commit/15e7d92879f144db1217ae498287dc29afe3222a",
+        "repo": "kaus-thetaa.github.io"
       }
     },
     {
