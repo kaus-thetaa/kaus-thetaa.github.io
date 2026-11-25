@@ -60,7 +60,7 @@ def timeline_markup():
             ongoing=entry['end'] is None
             photo=''
             if entry.get('photo'):
-                photo=f'<figure class="journey-photo"><img src="/assets/photos/{e["photo"]}.webp" alt="{e["photoAlt"]}" width="1600" height="{1200 if entry["photo"]=="thrustmit-rocket" else 900}" loading="lazy" decoding="async"><figcaption>{e["photoCaption"]}</figcaption></figure>' 
+                photo=f'<figure class="journey-photo"><img src="/assets/photos/{e["photo"]}.webp" alt="{e["photoAlt"]}" width="1600" height="{1200 if entry["photo"]=="thrustmit-rocket" else 900}" loading="lazy" decoding="async"><figcaption>{e["photoCaption"]}</figcaption></figure>'
             org=link(entry['url'],entry['organization']) if entry.get('url') else e['organization']
             entries.append(f'''<li class="journey-entry {e.get('emphasis','')}"><div class="journey-date"><time datetime="{e['start']}">{e['dateLabel']}</time>{'<span class="ongoing">Current role</span>' if ongoing else ''}</div><p class="journey-org">{org}</p><h4>{e['role']}</h4><p class="journey-description">{e['description']}</p><span class="journey-category">{e['type']}</span>{photo}</li>''')
         year=ESC(group['year'])

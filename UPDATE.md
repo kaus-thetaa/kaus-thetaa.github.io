@@ -30,3 +30,6 @@ Run `python3 -m http.server 8000` from the repository root. Open http://localhos
 
 ## Timeline updates
 Edit data/timeline.json using confirmed month/year dates. Preserve overlapping roles. Use null for a current role only when confirmed. Run python3 scripts/render.py to regenerate the timeline and project pages.
+
+## Personal photographs
+Selected owner photographs are stored in assets/photos; attribution and dimensions are in data/media.json. Journey photo placement and NCC title are controlled by data/timeline.json. The homepage template is templates/home.html; rebuild using npm run render.

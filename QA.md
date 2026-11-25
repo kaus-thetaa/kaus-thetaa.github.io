@@ -53,3 +53,6 @@ Email contact works through a mailto link. Google Sheet and Apps Script configur
 ## Repeat
 
 Run npm ci and npx playwright install chromium for QA tooling; serve the repo on port 8000, then npm run qa. Set CHROME_PATH if using an existing Chrome installation. Lighthouse can run with npx lighthouse http://localhost:8000/ --chrome-flags="--headless --no-sandbox". No dependencies are needed for static hosting.
+
+## Photo and code update, 25 November 2026
+Renderer and JavaScript syntax checks pass, with a clean whitespace check. Browser inspection confirms the new photos and SUO text, keyboard code reveal toggles aria-pressed, and no horizontal document overflow at desktop and 390px. No browser errors observed in this session. Earlier Lighthouse and axe results above refer to the earlier iteration and were not rerun for this update.
